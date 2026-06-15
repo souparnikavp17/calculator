@@ -9,7 +9,10 @@ function reset() {
 }
 
 function display(n) {
-    output.innerText = Math.floor(n*100000)/100000
+    if(n===""){
+        output.innerText=""
+    }else{
+        output.innerText = Math.floor(n*100000)/100000}
 }
 function operate(o) {
     if (o === "%") {
@@ -84,15 +87,15 @@ function input(n) {
 }
 
 function backspace() {
-    if (b === null) {
+    if (b === null && a!==null) {
         a = Math.floor(a / 10)
         if (a === 0) {
-            display(" ")
+            display("")
         } else {
             display(a)
         }
 
-    } else {
+    } else if(b!==null) {
         b = Math.floor(b / 10)
         if (b === 0) {
             display("")
@@ -116,7 +119,7 @@ opers.forEach(oper => {
 
 let ac = document.querySelector(".key.clear-btn.AC")
 ac.addEventListener("click", () => {
-    display(" ")
+    display("")
     reset()
 
 })

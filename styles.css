@@ -3,6 +3,7 @@ body{
     flex-direction: row;
     align-items:center;
     justify-content: center;
+    
 }
 
 .main{
@@ -17,6 +18,7 @@ body{
     align-self: center;
     flex-shrink: 0;
     box-sizing: border-box;
+    background-color: rgb(27, 27, 27);
     
 
 }
@@ -24,11 +26,12 @@ body{
 .display{
     border: 2px solid black;
     height: 200px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    background-color: rgba(237, 253, 221, 0.562);
 }
 
 .output{
@@ -78,6 +81,7 @@ body{
      padding-top:30px;
      
      
+     
 }
 
 .key{
@@ -96,4 +100,8 @@ body{
 .key.clear-btn{
     width: 130px;
     border-radius: 45%;
+    background-color: rgb(238, 90, 85);
+}
+.key.operator{
+    background-color: rgb(247, 244, 74);
 }
