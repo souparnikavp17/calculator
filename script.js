@@ -12,6 +12,18 @@ function display(n) {
     output.innerText = n
 }
 function operate(o) {
+    if(o==="%"){
+         if(a!==null){
+                    a=a/100
+                    display(a)
+                    console.log(a)
+                    return
+                }else{
+                    b=b/100
+                    display(b)
+                    return 
+                }
+    }
     if (b !== null) {
         switch (op) {
             case "+":
@@ -34,17 +46,8 @@ function operate(o) {
                 }
                 result = a/b
                 break
-            case "%":
-                if(a!==null){
-                    a=a/100
-                    display(a)
-                    console.log(a)
-                    return
-                }else{
-                    b=b/100
-                    display(b)
-                    return 
-                }
+         
+               
             case "=":
                 break
         }
@@ -80,6 +83,26 @@ function input(n) {
 
 }
 
+function backspace()
+{
+    if(b===null){
+        a=Math.floor(a/10)
+        if(a===0){
+            display(" ")
+        }else{
+            display(a)
+        }
+        
+    }else{
+        b=Math.floor(b/10)
+        if(b===0){
+            display("")
+        }else{
+            display(b)
+        }
+    }
+}
+
 digits.forEach(digit => {
     digit.addEventListener("click",()=>{
        input(digit.dataset.value)})
@@ -96,4 +119,9 @@ ac.addEventListener("click",()=>{
     display(" ")
     reset()
     
+})
+
+let c=document.querySelector(".key.clear-btn.C")
+c.addEventListener("click",()=>{
+    backspace()
 })
